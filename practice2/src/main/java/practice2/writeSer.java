@@ -1,4 +1,4 @@
-package pprraacc;
+package practice2;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,13 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/write")
-public class write extends HttpServlet {
+public class writeSer extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String jsp = "/WEB-INF/view/write.jsp";
+		String jsp ="/WEB-INF/view/write.jsp";
 		request.getRequestDispatcher(jsp).forward(request, response);
 	}
 
@@ -26,8 +27,14 @@ public class write extends HttpServlet {
 		vo.setTitle(title);
 		vo.setCtnt(ctnt);
 		
-		DAO.insertBoard(vo);
-		response.sendRedirect("/list3");
+		BoardDAO.insertBoard(vo);
+		response.sendRedirect("/list");
+		
+		
+		
+		
+		
+		
 	}
 
 }

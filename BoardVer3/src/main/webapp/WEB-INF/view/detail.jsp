@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>개빡쳐</h1>
+	<h1>글쓰기</h1>
 	<div>
 		<a href="/del3?iboard=${param.iboard}">삭제</a>
 		<a href = "/mod3?iboard=${param.iboard}">수정</a>

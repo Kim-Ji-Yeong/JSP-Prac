@@ -30,9 +30,8 @@ public class BoardDAO {
 		}
 
 		return 0;
-	}
-
-	public static List<BoardVO3> selBoardList() {
+	};
+		public static List<BoardVO3> selBoardList() {
 
 //		List<BoardVO3> list = new ArrayList();
 //		//list 에 들어갈수있는 객체는 BoardVO3밖에 읍따.
@@ -137,39 +136,7 @@ public class BoardDAO {
 		return null;
 	}
 
-	public static BoardVO3 detail(BoardVO3 param) {
-
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-
-		String sql = "SELECT * FROM t_board WHERE iboard = ?";
-
-		try {
-			con = DBUtils.getCon();
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, param.getIboard());
-			rs = ps.executeQuery();
-			BoardVO3 vo = new BoardVO3();
-			if(rs.next()) {
-				vo.setIboard(rs.getInt("iboard"));
-				vo.setCtnt(rs.getString("ctnt"));
-				vo.setRegdt(rs.getString("regdt"));
-				vo.setTitle(rs.getString("title"));
-			}
-			return vo;
-			
-			
-			// insert,update,delete
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			DBUtils.close(con, ps);
-		}
-
-		return null;
-	}
+	
 
 	public static int updBoard(BoardVO3 param) {
 		Connection con = null;
